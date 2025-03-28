@@ -12,6 +12,12 @@ return {
       require "configs.lspconfig"
     end,
   },
+  {
+    "kdheepak/lazygit.nvim",
+    keys = {
+      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+    },
+  },
 
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
