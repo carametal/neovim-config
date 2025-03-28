@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "onedark",
+	theme = "gruvchad",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
@@ -22,3 +22,4 @@ M.nvdash = { load_on_startup = true }
 --}
 
 return M
+
