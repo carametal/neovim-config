@@ -4,6 +4,10 @@ return {
     -- event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
+  {
+    "hrsh7th/nvim-cmp",
+    opts = require "configs.cmp"
+  },
 
   -- These are some examples, uncomment them if you want to see them work!
   {
