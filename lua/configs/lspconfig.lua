@@ -26,20 +26,18 @@ end
 lspconfig.ts_ls.setup {
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
-  on_init = {
-    init_options = {
-      plugins = {
-        {
-          name = "@vue/typescript-plugin",
-          location = vim.fn.stdpath "data" .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
-          languages = { "javascript", "typescript", "vue" },
-        },
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = vim.fn.stdpath "data" .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+        languages = { "javascript", "typescript", "vue" },
       },
     },
-    filetypes = {
-      "typescript",
-      "javascript",
-      "vue",
-    },
+  },
+  filetypes = {
+    "typescript",
+    "javascript",
+    "vue",
   },
 }
