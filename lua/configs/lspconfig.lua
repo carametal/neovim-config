@@ -7,7 +7,8 @@ local lspconfig = require "lspconfig"
 local servers = {
   "html",
   "cssls",
-  "gopls"
+  "gopls",
+  "volar",
 }
 
 local nvlsp = require "nvchad.configs.lspconfig"
@@ -22,9 +23,23 @@ for _, lsp in ipairs(servers) do
 end
 
 -- configuring single server, example: typescript
--- lspconfig.ts_ls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
-
+lspconfig.ts_ls.setup {
+  on_attach = nvlsp.on_attach,
+  capabilities = nvlsp.capabilities,
+  on_init = {
+    init_options = {
+      plugins = {
+        {
+          name = "@vue/typescript-plugin",
+          location = vim.fn.stdpath "data" .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+          languages = { "javascript", "typescript", "vue" },
+        },
+      },
+    },
+    filetypes = {
+      "typescript",
+      "javascript",
+      "vue",
+    },
+  },
+}
