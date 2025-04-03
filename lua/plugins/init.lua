@@ -107,4 +107,20 @@ return {
       },
     },
   },
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup {
+        current_line_blame = true,
+      }
+      vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", {
+        fg = "#4060B0",
+      })
+    end,
+    keys = {
+      { "<leader>gb", "<cmd>Gitsigns blame<cr>", desc = "Gitsigns blame" },
+      { "<leader>gl", "<cmd>Gitsigns blame_line<cr>", desc = "Gitsigns blame_line" },
+      { "<leader>gd", "<cmd>Gitsigns diffthis<cr>", desc = "Gitsigns diffthis" },
+    },
+  },
 }
