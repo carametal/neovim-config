@@ -125,5 +125,17 @@ return {
       { "<leader>gl", "<cmd>Gitsigns blame_line<cr>", desc = "Gitsigns blame_line" },
       { "<leader>gd", "<cmd>Gitsigns diffthis<cr>", desc = "Gitsigns diffthis" },
     },
+    {
+      "keaising/im-select.nvim",
+      lazy = false,
+      config = function()
+        require("im_select").setup {
+          default_command = "im-select",
+          default_im_select = "com.apple.keylayout.ABC",
+          set_default_events = { "VimEnter", "InsertEnter", "InsertLeave" },
+          set_previous_events = {},
+        }
+      end,
+    },
   },
 }
