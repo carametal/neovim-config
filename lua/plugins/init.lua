@@ -12,9 +12,22 @@ return {
   -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
+    opts = {
+      servers = {
+        lua_ls = {
+          settings = {
+            Lua = {
+              workspace = {
+                -- EmmyLua Spoonの型定義ファイルを追加
+                library = {
+                  vim.fn.expand "~/.hammerspoon/Spoons/EmmyLua.spoon/annotations",
+                },
+              },
+            },
+          },
+        },
+      },
+    },
   },
   {
     "kdheepak/lazygit.nvim",
