@@ -131,7 +131,7 @@ return {
       config = function()
         require("im_select").setup {
           default_command = "im-select",
-          default_im_select = "com.apple.keylayout.ABC",
+          default_im_select = "com.apple.inputmethod.Kotoeri.RomajiTyping.Roman",
           set_default_events = { "VimEnter", "InsertEnter", "InsertLeave" },
           set_previous_events = {},
         }
