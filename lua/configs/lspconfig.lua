@@ -42,3 +42,16 @@ lspconfig.ts_ls.setup {
     "vue",
   },
 }
+
+lspconfig.lua_ls.setup {
+  settings = {
+    Lua = {
+      workspace = {
+        -- EmmyLua Spoonの型定義ファイルを追加
+        library = {
+          vim.fn.expand "~/.hammerspoon/Spoons/EmmyLua.spoon/annotations",
+        },
+      },
+    },
+  },
+}
